@@ -450,6 +450,9 @@ h3{
 .contact-info p>i{
     font-size: 18px;
 }
+.contact-info p>a{
+    color: var(--color-white);
+}
 .contact-info::after{
     background: var(--color-white);
 }
@@ -458,6 +461,10 @@ h3{
 .contact-info:hover.contact-info i{
     color: #777;
     z-index: 2;
+}
+
+.contact-info:hover.contact-info a{
+    color: var(--second-color);
 }
 
 /* ----- CONTACT FORM ----- */

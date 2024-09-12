@@ -135,8 +135,6 @@ formsToValidate.forEach((form) => {
         input.style.borderColor = "gray"
         console.log(data)
         e.preventDefault()
-
-
       } else {
         e.preventDefault()
         input.style.borderColor = "red"
