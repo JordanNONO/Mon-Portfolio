@@ -206,7 +206,7 @@
                 </div>
             </div>
             <div class="col">
-                <form id="contact-form" class="form-control">
+                <form id="contact-form" class="form-control" validate>
                     <div class="form-inputs">
                         <input type="text" name="name" class="input-field" placeholder="Name" required>
                         <input type="email" name="email" class="input-field" placeholder="Email" required>
@@ -223,24 +223,7 @@
     </section>
     
     <script>
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            const formData = new FormData(this);
-
-            fetch('http://localhost:3000/send-email', {  // Mise à jour de l'URL pour l'envoi de mails
-                method: 'POST',
-                body: new URLSearchParams(formData),
-            })
-                .then(response => response.text())
-                .then(result => {
-                    alert(result);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Error sending email.');
-                });
-        });
+        
     </script>
 
 

@@ -214,6 +214,14 @@ nav{
     margin-top: 5em;
     gap: 30px;
 }
+.social_icons a i{
+    color: var(--first-color-hover);
+}
+
+.social_icons .icon:hover{
+    transform: translateY(-3px);
+    transition: transform .4s ease-in-out;
+}
 .icon{
     display: flex;
     justify-content: center;
@@ -384,7 +392,7 @@ h3{
 }
 .project-box>i{
     font-size: 50px;
-    color: #00B5E7;
+    color: var(--second-color);
     margin-bottom: 25px;
 }
 .project-box label{
@@ -398,8 +406,9 @@ h3{
     background: var(--second-color);
     width: 100%;
     height: 100%;
-    transition: .4s;
+    transition: .5s;
     z-index: 1;
+    cursor: pointer;
 }
 .project-box:hover.project-box::after,
 .contact-info:hover.contact-info::after{
@@ -490,7 +499,7 @@ textarea{
     color: var(--color-white);
 }
 .form-button>.btn:hover{
-    background: #00B5E7;
+    background: var(--first-color-hover);
 }
 .form-button i{
     font-size: 18px;
