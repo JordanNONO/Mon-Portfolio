@@ -76,11 +76,15 @@ i{
 
 /* ------- BASE -------- */
 body{
-    background: var(--body-color);
+    background: linear-gradient(120deg, #e6ffe6 0%, #d0f5d8 100%);
 }
 .container{
     width: 100%;
     position: relative;
+    background: rgba(255,255,255,0.85);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px 0 rgba(50,205,50,0.10);
+    padding-bottom: 30px;
 }
 
 /* ----- NAVIGATION BAR ----- */
@@ -251,17 +255,27 @@ nav{
     border-radius: 55% 45% 55% 45%;
     overflow: hidden;
     animation: imgFloat 7s ease-in-out infinite;
+    box-shadow: 0 8px 32px 0 rgba(50,205,50,0.25), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+    transition: box-shadow 0.3s, transform 0.3s;
+    position: relative;
+}
+.image:hover {
+    box-shadow: 0 16px 48px 0 rgba(50,205,50,0.35), 0 3px 16px 0 rgba(0,0,0,0.18);
+    transform: scale(1.04) rotate(-2deg);
 }
 .image img{
-    width: 380px;
-    height: 380px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    filter: brightness(1.05) contrast(1.05) drop-shadow(0 0 10px var(--first-color));
+    transition: filter 0.3s;
+}
+.image:hover img {
+    filter: brightness(1.12) contrast(1.12) drop-shadow(0 0 18px var(--second-color));
 }
 @keyframes imgFloat {
-    50%{
-        transform: translateY(10px);
-        border-radius: 45% 55% 45% 55%;
-    }
+    0%,100% { transform: translateY(0); border-radius: 55% 45% 55% 45%; }
+    50%{ transform: translateY(18px) scale(1.03); border-radius: 45% 55% 45% 55%; }
 }
 .scroll-btn{
    position: absolute;
@@ -280,13 +294,15 @@ nav{
    border-radius: 30px;
    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
 }
-.scroll-btn i{
-    font-size: 20px;
-}
 
 /* ----- MAIN BOX ----- */
 .section{
     padding-block: 5em;
+    background: rgba(255,255,255,0.95);
+    border-radius: 24px;
+    box-shadow: 0 4px 24px 0 rgba(50,205,50,0.08);
+    margin-bottom: 40px;
+    padding: 40px 0;
 }
 .row{
     display: flex;
@@ -386,9 +402,10 @@ h3{
     width: 30%;
     height: 250px;
     background: var(--color-white);
-    border-radius: 20px;
-    box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+    border-radius: 24px;
+    box-shadow: 0 2px 16px 0 rgba(50,205,50,0.10);
     overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
 .project-box>i{
     font-size: 50px;
@@ -399,10 +416,14 @@ h3{
     font-size: 15px;
     color: #777;
 }
-.project-box::after, .contact-info::after{
+
+/* corrected pseudo-elements and hover selectors */
+.project-box::after,
+.contact-info::after{
     content: "";
     position: absolute;
     bottom: -100%;
+    left: 0;
     background: var(--second-color);
     width: 100%;
     height: 100%;
@@ -410,15 +431,20 @@ h3{
     z-index: 1;
     cursor: pointer;
 }
-.project-box:hover.project-box::after,
-.contact-info:hover.contact-info::after{
+.project-box:hover::after,
+.contact-info:hover::after{
     bottom: 0;
 }
-.project-box:hover.project-box i,
-.project-box:hover.project-box>h3,
-.project-box:hover.project-box>label{
+.project-box:hover i,
+.project-box:hover > h3,
+.project-box:hover > label{
     color: var(--color-white);
     z-index: 2;
+}
+.project-box:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 32px 0 rgba(50,205,50,0.18);
+    background: var(--first-color);
 }
 
 /* ----- CONTACT BOX ----- */
@@ -456,14 +482,14 @@ h3{
 .contact-info::after{
     background: var(--color-white);
 }
-.contact-info:hover.contact-info h2,
-.contact-info:hover.contact-info p,
-.contact-info:hover.contact-info i{
+.contact-info:hover h2,
+.contact-info:hover p,
+.contact-info:hover i{
     color: #777;
     z-index: 2;
 }
 
-.contact-info:hover.contact-info a{
+.contact-info:hover a{
     color: var(--second-color);
 }
 
@@ -510,7 +536,7 @@ textarea{
 }
 .form-button i{
     font-size: 18px;
-    rotate: -45deg;
+    transform: rotate(-45deg);
 }
 
 /* ----- FOOTER BOX ----- */
@@ -520,8 +546,10 @@ footer{
     align-items: center;
     flex-direction: column;
     row-gap: 30px;
-    background: #F8F8F8;
+    background: linear-gradient(90deg, #e6ffe6 0%, #d0f5d8 100%);
     padding-block: 40px 60px;
+    box-shadow: 0 -2px 16px 0 rgba(50,205,50,0.10);
+    border-radius: 24px 24px 0 0;
 }
 .top-footer p{
     font-size: 25px;
@@ -547,7 +575,6 @@ footer{
     font-size: 14px;
     margin-top: 10px;
 }
-
 
 /* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
 @media only screen and (max-width: 1024px){

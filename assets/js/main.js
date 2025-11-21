@@ -33,7 +33,7 @@ function headerShadow() {
 
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText", {
-  strings: ["Developer", "Designer", "Analyst"],
+  strings: ["Developer", "Designer", "Data Analyst", "Analyst"],
   loop: true,
   typeSpeed: 100,
   backSpeed: 80,
@@ -117,32 +117,45 @@ function scrollActive() {
 window.addEventListener('scroll', scrollActive)
 
 function linkToSendMail({ name, email, message }) {
-  const link = document.createElement("a");
-  const linkValue = `mailto:jordannono2245@gmail.com?subject=${name}&body=${message}`
-  link.setAttribute("href", linkValue)
-  link.click();
+  const phone = "07 45 68 12 19";
+  const linkValue = `mailto:nononoj@3il.fr?subject=${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\nEmail: ' + email + '\nTéléphone: ' + phone)}`;
+  window.location.href = linkValue;
 }
 
+// Amélioration de la validation du formulaire et du mailto
 const formsToValidate = document.querySelectorAll('form[validate]');
 formsToValidate.forEach((form) => {
-  const data = {}
-  form.querySelector("button").addEventListener("click", function (e) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let valid = true;
+    const data = {};
     const inputs = [...form.querySelectorAll('input'), ...form.querySelectorAll("select"), ...form.querySelectorAll("textarea")];
-    for (let i = 0; i < inputs.length; i++) {
-      const input = inputs[i];
-      if (input.value !== "") {
-        data[input.name ?? input.id] = input.value
-        input.style.borderColor = "gray"
-        console.log(data)
-        e.preventDefault()
+    inputs.forEach(input => {
+      if (input.value.trim() === "") {
+        input.style.borderColor = "red";
+        valid = false;
       } else {
-        e.preventDefault()
-        input.style.borderColor = "red"
+        input.style.borderColor = "gray";
+        data[input.name ?? input.id] = input.value.trim();
       }
+    });
+    if (!valid) {
+      alert("Veuillez remplir tous les champs.");
+      return;
     }
-    linkToSendMail(data)
-    setTimeout(() => {
-      e.stopPropagation()
-    }, 1000);
-  })
-})
+    // Envoi du mail
+    window.location.href = `mailto:nononoj@3il.fr?subject=${encodeURIComponent(data.name)}&body=${encodeURIComponent(data.message + '\n\nEmail: ' + data.email)}`;
+    form.reset();
+    alert("Message prêt à être envoyé via votre client mail.");
+  });
+});
+
+// Accessibilité : fermer le menu mobile avec ESC
+window.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var menuBtn = document.getElementById("myNavMenu");
+    if (menuBtn.className.includes("responsive")) {
+      menuBtn.className = "nav-menu";
+    }
+  }
+});
