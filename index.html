@@ -100,6 +100,9 @@
                     <a href="#projects" class="nav-link">Projets</a>
                 </li>
                 <li class="nav_list">
+                    <a href="#certifications" class="nav-link">Certifications</a>
+                </li>
+                <li class="nav_list">
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
@@ -540,6 +543,39 @@
           </div>
        </section>
 
+       <!-- -------------- CERTIFICATIONS BOX ---------------- -->
+       <section class="section" id="certifications">
+          <div class="top-header">
+              <p class="section-tag"><span class="prompt">$</span> ls certifications/</p>
+              <h2>Certifications</h2>
+              <span>Formations certifiantes suivies pour renforcer mes compétences</span>
+          </div>
+          <div class="services-grid">
+            <div class="service-card">
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#a435f0"></span>gestion-projet.cert</div>
+                    <div class="project-card-links">
+                        <a href="https://ude.my/UC-8b0775c5-676e-46f9-b721-7aee133df86f" target="_blank" rel="noopener" aria-label="Vérifier le certificat"><i class="uil uil-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="service-card-icon"><i class="uil uil-medal"></i></div>
+                <h3>Gestion de Projet : Initiation, Planification et Exécution</h3>
+                <p>Udemy · Formateur Muhammad Adeel · 2h · Septembre 2026</p>
+            </div>
+            <div class="service-card">
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#a435f0"></span>power-bi.cert</div>
+                    <div class="project-card-links">
+                        <a href="https://ude.my/UC-95b0ff28-225c-417b-a17c-872d05560078" target="_blank" rel="noopener" aria-label="Vérifier le certificat"><i class="uil uil-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="service-card-icon"><i class="uil uil-medal"></i></div>
+                <h3>Certification Microsoft Power BI — Ateliers Pratiques</h3>
+                <p>Udemy · Dr. Firas / Europe Innovation · 13h · Septembre 2026</p>
+            </div>
+          </div>
+       </section>
+
        <!-- -------------- CONTACT BOX ---------------- -->
 
      <section class="section" id="contact">
@@ -565,7 +601,7 @@
                 </div>
             </div>
             <div class="col">
-                <form id="contact-form" class="form-control terminal-window" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" validate>
+                <form id="contact-form" class="form-control terminal-window" action="https://api.web3forms.com/submit" method="POST" validate>
                     <div class="terminal-titlebar">
                         <span class="terminal-dot red"></span>
                         <span class="terminal-dot yellow"></span>
@@ -573,9 +609,13 @@
                         <span class="terminal-title">message.sh</span>
                     </div>
                     <div class="terminal-body">
-                        <input type="hidden" name="form-name" value="contact">
+                        <input type="hidden" name="access_key" value="04826cc9-6b7d-44c1-bce7-a16554e658aa">
+                        <input type="hidden" name="subject" value="Nouveau message - Portfolio">
+                        <input type="hidden" name="from_name" value="Portfolio Jordan NONO">
                         <p class="hp-field" aria-hidden="true">
-                            <label>Ne pas remplir si humain : <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                            <label>Ne pas remplir si humain :
+                                <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+                            </label>
                         </p>
                         <div class="form-inputs">
                             <div class="form-field">
@@ -614,6 +654,7 @@
                 <li class="footer_menu_list"><a href="#home" class="btn" style="padding:2px 8px;">Accueil</a></li>
                 <li class="footer_menu_list"><a href="#about" class="btn" style="padding:2px 8px;">À propos</a></li>
                 <li class="footer_menu_list"><a href="#projects" class="btn" style="padding:2px 8px;">Projets</a></li>
+                <li class="footer_menu_list"><a href="#certifications" class="btn" style="padding:2px 8px;">Certifications</a></li>
                 <li class="footer_menu_list"><a href="#contact" class="btn" style="padding:2px 8px;">Contact</a></li>
             </ul>
         </div>

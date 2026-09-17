@@ -1,10 +1,4 @@
-/* ----- VALIDATION ET ENVOI DU FORMULAIRE DE CONTACT (Netlify Forms) ----- */
-function encodeFormData(data) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
-
+/* ----- VALIDATION ET ENVOI DU FORMULAIRE DE CONTACT (Web3Forms) ----- */
 const formsToValidate = document.querySelectorAll('form[validate]');
 
 formsToValidate.forEach((form) => {
@@ -15,7 +9,6 @@ formsToValidate.forEach((form) => {
     e.preventDefault();
 
     let valid = true;
-    const data = {};
     const requiredFields = form.querySelectorAll('[required]');
 
     requiredFields.forEach((field) => {
@@ -25,7 +18,6 @@ formsToValidate.forEach((form) => {
       } else {
         field.style.borderColor = "";
       }
-      data[field.name] = field.value.trim();
     });
 
     if (!valid) {
@@ -36,13 +28,13 @@ formsToValidate.forEach((form) => {
       return;
     }
 
-    // Honeypot anti-spam : si rempli, on abandonne silencieusement
-    const honeypot = form.querySelector('[name="bot-field"]');
-    if (honeypot && honeypot.value !== "") {
+    // Honeypot anti-spam : si coché, on abandonne silencieusement
+    const honeypot = form.querySelector('[name="botcheck"]');
+    if (honeypot && honeypot.checked) {
       return;
     }
 
-    data['form-name'] = form.getAttribute('name');
+    const formData = new FormData(form);
 
     if (submitBtn) submitBtn.disabled = true;
     if (statusEl) {
@@ -50,14 +42,15 @@ formsToValidate.forEach((form) => {
       statusEl.className = "form-status";
     }
 
-    fetch("/", {
+    fetch(form.action, {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encodeFormData(data),
+      headers: { Accept: "application/json" },
+      body: formData,
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("HTTP " + response.status);
+      .then((response) => response.json())
+      .then((result) => {
+        if (!result.success) {
+          throw new Error(result.message || "Échec de l'envoi");
         }
         if (statusEl) {
           statusEl.textContent = "Message envoyé, merci ! Je reviens vers vous rapidement.";
