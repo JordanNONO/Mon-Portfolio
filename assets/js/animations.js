@@ -1,6 +1,6 @@
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText", {
-  strings: ["Developer", "Designer", "Data Analyst", "Analyst"],
+  strings: ["Chef de Projet IT", "Data Analyst", "Data Engineer", "Développeur Fullstack"],
   loop: true,
   typeSpeed: 100,
   backSpeed: 80,
