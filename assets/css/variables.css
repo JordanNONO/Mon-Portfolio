@@ -1,5 +1,5 @@
-/* ----- FONTS ----- */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+/* ----- FONTS: chargées via <link> dans index.html <head>, pas ici -----
+   (un @import CSS retarderait le rendu ; voir la balise <link> dans le head) */
 
 /* ----- VARIABLES (DARK THEME — DEFAULT) ----- */
 :root,
