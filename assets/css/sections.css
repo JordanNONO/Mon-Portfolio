@@ -81,16 +81,6 @@ h3{
     color: var(--text-muted);
     margin-bottom: 24px;
 }
-.about-btn button{
-    background: var(--gradient);
-    color: var(--surface-alt);
-    border: none;
-    border-radius: 8px;
-}
-.about-btn button:hover{
-    filter: brightness(1.08);
-}
-
 /* ----- ABOUT / SKILLS AS CODE BLOCK ----- */
 .skills-box{
     margin-bottom: 22px;
