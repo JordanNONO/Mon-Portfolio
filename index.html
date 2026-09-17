@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Jordan NONO — Chef de Projet IT, Data Analyst, Data Engineer et Développeur Fullstack. Découvrez mes projets web, mobile et data.">
+    <meta name="description" content="Portfolio de Jordan NONO (root) — Chef de Projet IT, Data Analyst, Data Engineer et Développeur Fullstack. Découvrez mes projets web, mobile et data.">
 
-    <!-- --------- THEME (avoid flash of wrong theme) ---------- -->
+    <!-- --------- THEME (dark by default — avoid flash of wrong theme) ---------- -->
     <script>
         (function () {
             var saved = localStorage.getItem('theme');
-            var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            var theme = saved === 'light' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
@@ -43,23 +43,18 @@
             <ul class="nav_menu_list">
                 <li class="nav_list">
                     <a href="#home" class="nav-link active-link">Accueil</a>
-                    <div class="circle"></div>
                 </li>
                 <li class="nav_list">
                     <a href="#about" class="nav-link">À propos</a>
-                    <div class="circle"></div>
                 </li>
                 <li class="nav_list">
                     <a href="#services" class="nav-link">Services</a>
-                    <div class="circle"></div>
                 </li>
                 <li class="nav_list">
                     <a href="#projects" class="nav-link">Projets</a>
-                    <div class="circle"></div>
                 </li>
                 <li class="nav_list">
                     <a href="#contact" class="nav-link">Contact</a>
-                    <div class="circle"></div>
                 </li>
             </ul>
         </div>
@@ -84,43 +79,78 @@
     <main class="wrapper">
        <!-- -------------- FEATURED BOX ---------------- -->
        <section class="featured-box" id="home">
-          <div class="featured-text">
-            <div class="featured-text-card">
-                <span>Jordan NONO</span>
-            </div>
-            <div class="featured-name">
-                <p>Je suis <span class="typedText"></span></p>
-            </div>
-            <div class="featured-text-info">
-                <p>Chef de Projet IT, Data Analyst / Data Engineer et Développeur Fullstack, passionné par le pilotage de projets techniques, l'extraction d'insights à partir de la donnée et la création de sites web esthétiques et intuitifs. Je conçois des dashboards interactifs, automatise des pipelines de données et livre des analyses actionnables pour la prise de décision.</p>
-            </div>
-            <div class="featured-text-btn">
-                <button class="btn blue-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Me contacter</button>
-                <button class="btn" onclick="window.open('https://cvdesignr.com/p/63d877678a9e9', '_blank')">
-                    Télécharger CV <i class="uil uil-file-alt"></i>
-                </button>
 
+          <!-- ---- Hero terminal ---- -->
+          <div class="terminal-window hero-terminal">
+            <div class="terminal-titlebar">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">root@jordan-nono — zsh</span>
             </div>
-            <div class="social_icons">
-                <a href="https://www.instagram.com/nononnjcjordan" target="_blank" rel="noopener" class="icon" aria-label="Instagram">
-                    <i class="uil uil-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/jordan-nono-67b125262" target="_blank" rel="noopener" class="icon" aria-label="LinkedIn">
-                    <i class="uil uil-linkedin-alt"></i>
-                </a>
-                <a href="https://dribbble.com/NONOJordan" target="_blank" rel="noopener" class="icon" aria-label="Dribbble">
-                    <i class="uil uil-dribbble"></i>
-                </a>
-                <a href="https://github.com/jordanNONO" target="_blank" rel="noopener" class="icon" aria-label="GitHub">
-                    <i class="uil uil-github-alt"></i>
-                </a>
+            <div class="terminal-body">
+                <p class="term-line"><span class="prompt">$</span> whoami</p>
+                <p class="term-line" style="color:var(--text-color); font-weight:600;">Jordan NONO <span style="color:var(--text-muted)">(alias : root)</span></p>
+
+                <p class="term-line" style="margin-top:16px;"><span class="prompt">$</span> echo $ROLE</p>
+                <p class="hero-role">Je suis <span class="typedText"></span></p>
+
+                <p class="term-comment">Chef de Projet IT, Data Analyst / Data Engineer et Développeur Fullstack, passionné par le pilotage de projets techniques, l'extraction d'insights à partir de la donnée et la création de sites web esthétiques et intuitifs. Je conçois des dashboards interactifs, automatise des pipelines de données et livre des analyses actionnables pour la prise de décision.</p>
+
+                <div class="term-actions">
+                    <button class="btn blue-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Me contacter</button>
+                    <button class="btn" onclick="window.open('https://cvdesignr.com/p/63d877678a9e9', '_blank')">
+                        Télécharger CV <i class="uil uil-file-alt"></i>
+                    </button>
+                </div>
+
+                <div class="social_icons">
+                    <a href="https://www.instagram.com/nononnjcjordan" target="_blank" rel="noopener" class="icon" aria-label="Instagram">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jordan-nono-67b125262" target="_blank" rel="noopener" class="icon" aria-label="LinkedIn">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                    <a href="https://dribbble.com/NONOJordan" target="_blank" rel="noopener" class="icon" aria-label="Dribbble">
+                        <i class="uil uil-dribbble"></i>
+                    </a>
+                    <a href="https://github.com/jordanNONO" target="_blank" rel="noopener" class="icon" aria-label="GitHub">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+                </div>
             </div>
           </div>
-          <div class="featured-image">
-            <div class="image">
-                <img src="assets/images/avatar.jpg" alt="Portrait de Jordan NONO">
+
+          <!-- ---- Neofetch identity card (remplace la photo) ---- -->
+          <div class="terminal-window neofetch-card">
+            <div class="terminal-titlebar">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">root@jordan-nono</span>
+            </div>
+            <div class="terminal-body">
+                <p class="term-line"><span class="prompt">$</span> neofetch</p>
+                <div class="neofetch-rule"></div>
+                <div class="neofetch-body">
+                    <div class="neofetch-row"><span class="neofetch-key">user</span><span class="neofetch-value">root@jordan-nono</span></div>
+                    <div class="neofetch-row"><span class="neofetch-key">role</span><span class="neofetch-value">Chef de Projet IT</span></div>
+                    <div class="neofetch-row"><span class="neofetch-key">stack</span><span class="neofetch-value">Fullstack · Data</span></div>
+                    <div class="neofetch-row"><span class="neofetch-key">focus</span><span class="neofetch-value">Data Engineering</span></div>
+                    <div class="neofetch-row"><span class="neofetch-key">experience</span><span class="neofetch-value">3+ ans</span></div>
+                    <div class="neofetch-row"><span class="neofetch-key">status</span><span class="neofetch-value neofetch-status"><span class="status-dot"></span> Disponible</span></div>
+                </div>
+                <div class="neofetch-swatches">
+                    <span style="background:var(--first-color)"></span>
+                    <span style="background:var(--third-color)"></span>
+                    <span style="background:var(--accent-purple)"></span>
+                    <span style="background:var(--accent-amber)"></span>
+                    <span style="background:var(--accent-red)"></span>
+                </div>
+                <p class="term-line" style="margin-top:18px;"><span class="prompt">$</span> <span class="blink-cursor"></span></p>
             </div>
           </div>
+
           <div class="scroll-icon-box">
             <a href="#about" class="scroll-btn">
                 <i class="uil uil-mouse-alt"></i>
@@ -132,25 +162,32 @@
        <!-- -------------- ABOUT BOX ---------------- -->
        <section class="section" id="about">
           <div class="top-header">
+            <p class="section-tag"><span class="prompt">$</span> cat about.md</p>
             <h1>À propos de moi</h1>
           </div>
           <div class="row">
             <div class="col">
-                <div class="about-info">
-                    <h3>Mon introduction</h3>
-                    <p>Je suis Chef de Projet IT, Data Analyst / Data Engineer et Développeur Fullstack. Mon expertise couvre le pilotage de projets, Python, Pandas, Power BI, SQL et la data visualisation, ainsi que le développement backend et frontend. Je crée des dashboards interactifs, automatise des pipelines de données et livre des analyses actionnables pour la prise de décision, tout en construisant des applications web modernes.</p>
-                    <div class="about-btn">
-                        <button class="btn" onclick="window.open('https://cvdesignr.com/p/63d877678a9e9', '_blank')">
-                            Télécharger CV <i class="uil uil-file-alt"></i>
-                        </button>
+                <div class="about-info terminal-window">
+                    <div class="terminal-titlebar">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">about.md</span>
+                    </div>
+                    <div class="terminal-body">
+                        <h3>Mon introduction</h3>
+                        <p>Je suis Chef de Projet IT, Data Analyst / Data Engineer et Développeur Fullstack. Mon expertise couvre le pilotage de projets, Python, Pandas, Power BI, SQL et la data visualisation, ainsi que le développement backend et frontend. Je crée des dashboards interactifs, automatise des pipelines de données et livre des analyses actionnables pour la prise de décision, tout en construisant des applications web modernes.</p>
+                        <div class="about-btn">
+                            <button class="btn" onclick="window.open('https://cvdesignr.com/p/63d877678a9e9', '_blank')">
+                                Télécharger CV <i class="uil uil-file-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="skills-box">
-                    <div class="skills-header">
-                        <h3>Données & Analyse</h3>
-                    </div>
+                    <p class="code-line"><span class="token-keyword">const</span> <span class="token-var">dataAnalytics</span> = [</p>
                     <div class="skills-list">
                         <span>Python</span>
                         <span>Pandas</span>
@@ -160,11 +197,10 @@
                         <span>Matplotlib</span>
                         <span>Seaborn</span>
                     </div>
+                    <p class="code-line">]</p>
                 </div>
                 <div class="skills-box">
-                    <div class="skills-header">
-                        <h3>Backend</h3>
-                    </div>
+                    <p class="code-line"><span class="token-keyword">const</span> <span class="token-var">backend</span> = [</p>
                     <div class="skills-list">
                         <span>Laravel</span>
                         <span>JAVA</span>
@@ -175,11 +211,10 @@
                         <span>MongoDB</span>
                         <span>SQL Server</span>
                     </div>
+                    <p class="code-line">]</p>
                 </div>
                 <div class="skills-box">
-                    <div class="skills-header">
-                        <h3>Frontend</h3>
-                    </div>
+                    <p class="code-line"><span class="token-keyword">const</span> <span class="token-var">frontend</span> = [</p>
                     <div class="skills-list">
                         <span>HTML</span>
                         <span>CSS</span>
@@ -190,6 +225,7 @@
                         <span>React</span>
                         <span>Angular</span>
                     </div>
+                    <p class="code-line">]</p>
                 </div>
             </div>
           </div>
@@ -198,21 +234,31 @@
        <!-- -------------- SERVICES BOX ---------------- -->
        <section class="section" id="services">
           <div class="top-header">
+              <p class="section-tag"><span class="prompt">$</span> cat services.json</p>
               <h1>Ce que je fais</h1>
               <span>Les domaines dans lesquels j'interviens au quotidien</span>
           </div>
           <div class="services-grid">
             <div class="service-card">
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#3178c6"></span>web-dev.ts</div>
+                </div>
                 <div class="service-card-icon"><i class="uil uil-brackets-curly"></i></div>
                 <h3>Développement Web</h3>
                 <p>Sites et applications web sur-mesure, du backend (Laravel, Node.js, C#) au frontend (React, Angular, Tailwind), avec une attention particulière à l'UX et aux performances.</p>
             </div>
             <div class="service-card">
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#3572A5"></span>data-bi.py</div>
+                </div>
                 <div class="service-card-icon"><i class="uil uil-chart-line"></i></div>
                 <h3>Analyse de Données & BI</h3>
                 <p>Nettoyage et analyse de données avec Python/Pandas et SQL, création de dashboards Power BI clairs et exploitables pour appuyer la prise de décision.</p>
             </div>
             <div class="service-card">
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#89e051"></span>automation.sh</div>
+                </div>
                 <div class="service-card-icon"><i class="uil uil-process"></i></div>
                 <h3>Automatisation & Pipelines</h3>
                 <p>Automatisation de flux de données et de tâches récurrentes, mise en place de pipelines fiables pour gagner du temps et fiabiliser les traitements.</p>
@@ -224,6 +270,7 @@
 
        <section class="section" id="projects">
           <div class="top-header">
+              <p class="section-tag"><span class="prompt">$</span> SELECT * FROM projects;</p>
               <h1>Projets</h1>
               <span>Une sélection de projets web, mobile et data — le reste sur <a href="https://github.com/jordanNONO" target="_blank" rel="noopener" class="btn" style="padding:4px 12px;vertical-align:middle;">GitHub <i class="uil uil-github-alt"></i></a></span>
           </div>
@@ -253,17 +300,17 @@
           </div>
 
           <div class="project-filter">
-              <button class="project-filter-btn active" data-filter="all" type="button">Tous</button>
-              <button class="project-filter-btn" data-filter="web" type="button">Web</button>
-              <button class="project-filter-btn" data-filter="mobile" type="button">Mobile</button>
-              <button class="project-filter-btn" data-filter="data" type="button">Data</button>
+              <button class="project-filter-btn active" data-filter="all" type="button">tous</button>
+              <button class="project-filter-btn" data-filter="web" type="button">web</button>
+              <button class="project-filter-btn" data-filter="mobile" type="button">mobile</button>
+              <button class="project-filter-btn" data-filter="data" type="button">data</button>
           </div>
 
           <div class="project-grid">
 
             <article class="project-card" data-category="web">
-                <div class="project-card-top">
-                    <div class="project-card-icon"><i class="uil uil-graduation-cap"></i></div>
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#4F5D95"></span>gestion-notes.php</div>
                     <div class="project-card-links">
                         <a href="https://github.com/JordanNONO/gestion_notes_etudiants_laravel" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
                     </div>
@@ -278,8 +325,8 @@
             </article>
 
             <article class="project-card" data-category="mobile">
-                <div class="project-card-top">
-                    <div class="project-card-icon"><i class="uil uil-building"></i></div>
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#00B4AB"></span>easyroom.dart</div>
                     <div class="project-card-links">
                         <a href="https://github.com/JordanNONO/EASYROOM" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
                     </div>
@@ -294,8 +341,8 @@
             </article>
 
             <article class="project-card" data-category="mobile">
-                <div class="project-card-top">
-                    <div class="project-card-icon"><i class="uil uil-car"></i></div>
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#00B4AB"></span>covoiturage.dart</div>
                     <div class="project-card-links">
                         <a href="https://github.com/JordanNONO/Covoiturage-universitaire" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
                     </div>
@@ -310,8 +357,8 @@
             </article>
 
             <article class="project-card" data-category="data">
-                <div class="project-card-top">
-                    <div class="project-card-icon"><i class="uil uil-wallet"></i></div>
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#3572A5"></span>suivi-financier.py</div>
                     <div class="project-card-links">
                         <a href="https://github.com/JordanNONO/Mon_Suivi_Financier" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
                     </div>
@@ -326,8 +373,8 @@
             </article>
 
             <article class="project-card" data-category="web">
-                <div class="project-card-top">
-                    <div class="project-card-icon"><i class="uil uil-utensils-alt"></i></div>
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#178600"></span>fastfood.cs</div>
                     <div class="project-card-links">
                         <a href="https://github.com/JordanNONO/Fastfood" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
                     </div>
@@ -342,8 +389,8 @@
             </article>
 
             <article class="project-card" data-category="web">
-                <div class="project-card-top">
-                    <div class="project-card-icon"><i class="uil uil-shopping-cart-alt"></i></div>
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#178600"></span>ecommerce.cs</div>
                     <div class="project-card-links">
                         <a href="https://github.com/JordanNONO/complete-ecommerce-asp.net-mvc-application" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
                     </div>
@@ -358,8 +405,8 @@
             </article>
 
             <article class="project-card" data-category="web">
-                <div class="project-card-top">
-                    <div class="project-card-icon"><i class="uil uil-map-marker"></i></div>
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#b07219"></span>signalement.java</div>
                     <div class="project-card-links">
                         <a href="https://github.com/DafangErica/Signalement" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
                     </div>
@@ -374,8 +421,8 @@
             </article>
 
             <article class="project-card" data-category="data">
-                <div class="project-card-top">
-                    <div class="project-card-icon"><i class="uil uil-database"></i></div>
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#3572A5"></span>big-data-tp.py</div>
                     <div class="project-card-links">
                         <a href="https://github.com/francis-tg/big_data_tp2" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
                     </div>
@@ -390,8 +437,8 @@
             </article>
 
             <article class="project-card" data-category="mobile">
-                <div class="project-card-top">
-                    <div class="project-card-icon"><i class="uil uil-address-card"></i></div>
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#A97BFF"></span>bettercv.kt</div>
                     <div class="project-card-links">
                         <a href="https://github.com/cabrelshadow/BetterCv" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
                     </div>
@@ -406,8 +453,8 @@
             </article>
 
             <article class="project-card" data-category="web">
-                <div class="project-card-top">
-                    <div class="project-card-icon"><i class="uil uil-shopping-bag"></i></div>
+                <div class="file-header">
+                    <div class="file-header-name"><span class="lang-dot" style="background:#f1e05a"></span>ecommerce-site.js</div>
                     <div class="project-card-links">
                         <a href="https://github.com/madkely/E-commerce-site" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
                     </div>
@@ -428,28 +475,52 @@
 
      <section class="section" id="contact">
         <div class="top-header">
+            <p class="section-tag"><span class="prompt">$</span> cat contact.sh</p>
             <h1>Contactez-moi</h1>
             <span>Vous avez un projet en tête ? Contactez-moi ici</span>
         </div>
         <div class="row">
             <div class="col">
-                <div class="contact-info">
-                    <h2>Me trouver <i class="uil uil-corner-right-down"></i></h2>
-                    <p><i class="uil uil-envelope"></i> Email: <a href="mailto:nononoj@3il.fr" class="btn" style="padding:2px 8px;">nononoj@3il.fr</a></p>
-                    <p><i class="uil uil-phone"></i> Tel: <a href="tel:+33745681219" class="btn" style="padding:2px 8px;">07 45 68 12 19</a></p>
+                <div class="contact-info terminal-window">
+                    <div class="terminal-titlebar">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">contact.sh</span>
+                    </div>
+                    <div class="terminal-body">
+                        <h2><i class="uil uil-corner-right-down"></i> Me trouver</h2>
+                        <p class="contact-line"><i class="uil uil-envelope"></i> <span class="token-var">EMAIL</span>="<a href="mailto:nononoj@3il.fr">nononoj@3il.fr</a>"</p>
+                        <p class="contact-line"><i class="uil uil-phone"></i> <span class="token-keyword">TEL</span>="<a href="tel:+33745681219">07 45 68 12 19</a>"</p>
+                    </div>
                 </div>
             </div>
             <div class="col">
-                <form id="contact-form" class="form-control" validate method="post" accept="#">
-                    <div class="form-inputs">
-                        <input type="text" name="name" class="input-field" placeholder="Nom" required>
-                        <input type="email" name="email" class="input-field" placeholder="Email" required>
+                <form id="contact-form" class="form-control terminal-window" validate method="post" accept="#">
+                    <div class="terminal-titlebar">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">message.sh</span>
                     </div>
-                    <div class="text-area">
-                        <textarea name="message" placeholder="Message" required></textarea>
-                    </div>
-                    <div class="form-button">
-                        <button type="submit" class="btn">Envoyer <i class="uil uil-message"></i></button>
+                    <div class="terminal-body">
+                        <div class="form-inputs">
+                            <div class="form-field">
+                                <label class="form-label">nom =</label>
+                                <input type="text" name="name" class="input-field" placeholder="Votre nom" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label">email =</label>
+                                <input type="email" name="email" class="input-field" placeholder="vous@exemple.com" required>
+                            </div>
+                        </div>
+                        <div class="form-field full">
+                            <label class="form-label">message =</label>
+                            <textarea name="message" placeholder="Votre message..." required></textarea>
+                        </div>
+                        <div class="form-button">
+                            <button type="submit" class="btn">Envoyer <i class="uil uil-message"></i></button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -462,7 +533,7 @@
     <!-- --------------- FOOTER --------------- -->
     <footer>
         <div class="top-footer">
-            <p>Jordan NONO .</p>
+            <p><span class="prompt">$</span> Jordan NONO</p>
         </div>
         <div class="middle-footer">
             <ul class="footer-menu">
@@ -479,7 +550,7 @@
             <div class="icon"><a href="https://github.com/jordanNONO" target="_blank" rel="noopener" aria-label="GitHub"><i class="uil uil-github-alt"></i></a></div>
         </div>
         <div class="bottom-footer">
-            <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Jordan NONO</a> - Tous droits réservés</p>
+            <p>// Copyright &copy; <a href="#home">Jordan NONO</a> - Tous droits réservés</p>
         </div>
     </footer>
 

@@ -1,12 +1,9 @@
-/* ----- POPPINS FONT Link ----- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
 /* ----- BASE ----- */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
 }
 
 html{
@@ -15,12 +12,16 @@ html{
 
 body{
     background: var(--body-color);
+    background-image:
+        radial-gradient(circle at 15% 0%, color-mix(in srgb, var(--first-color) 10%, transparent) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, color-mix(in srgb, var(--third-color) 8%, transparent) 0%, transparent 40%);
+    background-attachment: fixed;
     transition: background var(--transition-med);
 }
 
 ::selection{
     background: var(--first-color);
-    color: var(--color-white);
+    color: var(--surface-alt);
 }
 
 :focus-visible{
@@ -48,26 +49,59 @@ body{
 /* ----- GLOBAL BUTTON DESIGN ----- */
 .btn{
     display: inline-block;
+    font-family: var(--font-mono);
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13px;
     text-decoration: none;
-    padding: 12px 22px;
+    padding: 12px 20px;
     background: var(--surface-soft);
     color: var(--text-color);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 .btn>i{
     margin-left: 10px;
 }
 .btn:hover{
     background: var(--gradient);
-    color: var(--color-white);
+    color: var(--surface-alt);
     border-color: transparent;
     transform: translateY(-2px);
     box-shadow: 0 10px 24px -8px var(--shadow-color);
+}
+.btn-solid{
+    background: var(--gradient);
+    color: var(--surface-alt);
+    border-color: transparent;
+    box-shadow: 0 10px 24px -8px var(--shadow-color);
+}
+.btn-solid:hover{
+    filter: brightness(1.08);
+    color: var(--surface-alt);
+}
+
+/* ----- MONOSPACE PROMPT HELPERS ----- */
+.prompt{
+    color: var(--first-color);
+    font-weight: 600;
+}
+.mono{
+    font-family: var(--font-mono);
+}
+.blink-cursor{
+    display: inline-block;
+    width: 8px;
+    height: 1em;
+    margin-left: 2px;
+    background: var(--first-color);
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink{
+    0%, 49%{ opacity: 1; }
+    50%, 100%{ opacity: 0; }
 }
 
 /* ----- GLOBAL ICONS DESIGN ----- */

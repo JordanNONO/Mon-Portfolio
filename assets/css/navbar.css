@@ -1,4 +1,4 @@
-/* ----- NAVIGATION BAR ----- */
+/* ----- NAVIGATION BAR (editor tab-bar style) ----- */
 nav{
     position: fixed;
     top: 0;
@@ -7,81 +7,96 @@ nav{
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 90px;
-    background: rgba(255,255,255,0.7);
+    height: 64px;
+    background: color-mix(in srgb, var(--surface-alt) 88%, transparent);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
     padding-inline: 9vw;
     transition: background var(--transition-med), box-shadow var(--transition-med), height var(--transition-med);
     z-index: 100;
-}
-html[data-theme="dark"] nav{
-    background: rgba(13,13,24,0.7);
 }
 .nav-logo{
    position: relative;
    display: flex;
    align-items: center;
+   font-family: var(--font-mono);
 }
 .nav-name{
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 600;
     color: var(--text-color);
-    letter-spacing: -0.5px;
+}
+.nav-name::before{
+    content: '~/';
+    color: var(--text-muted);
 }
 .nav-logo span{
-    font-size: 26px;
+    font-size: 17px;
     font-weight: 700;
     color: var(--first-color);
-    margin-left: 2px;
+    margin-left: 1px;
 }
 .nav-menu, .nav_menu_list{
     display: flex;
     align-items: center;
+    height: 100%;
 }
 .nav-menu .nav_list{
     list-style: none;
     position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 .nav-link{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    height: 100%;
     text-decoration: none;
     color: var(--text-muted);
+    font-family: var(--font-mono);
     font-weight: 500;
-    font-size: 15px;
-    padding-inline: 15px;
-    margin-inline: 5px;
-    transition: color var(--transition-fast);
+    font-size: 13px;
+    padding-inline: 14px;
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+.nav-link::before{
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    opacity: .5;
+    flex-shrink: 0;
 }
 .nav-link:hover{
-    color: var(--first-color);
+    color: var(--text-color);
+    background: var(--surface-soft);
 }
 .nav-right{
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
 }
 .nav-menu-btn{
     display: none;
 }
 .nav-menu-btn i{
-    font-size: 26px;
+    font-size: 24px;
     cursor: pointer;
     color: var(--text-color);
 }
 .active-link{
-    position: relative;
     color: var(--first-color) !important;
+    border-bottom-color: var(--first-color);
 }
-.active-link::after{
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -6px;
-    transform: translateX(-50%);
-    width: 5px;
-    height: 5px;
+.active-link::before{
     background: var(--first-color);
-    border-radius: 50%;
+    opacity: 1;
+    box-shadow: 0 0 8px var(--first-color);
 }
 
 /* ----- THEME TOGGLE ----- */
@@ -89,9 +104,9 @@ html[data-theme="dark"] nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
     border: 1px solid var(--border-color);
     background: var(--surface-soft);
     color: var(--text-color);
@@ -101,18 +116,17 @@ html[data-theme="dark"] nav{
 }
 .theme-toggle:hover{
     background: var(--gradient);
-    color: var(--color-white);
-    transform: rotate(15deg);
+    color: var(--surface-alt);
 }
 .theme-toggle i{
-    font-size: 20px;
+    font-size: 18px;
 }
 .theme-toggle .uil-moon{
     display: none;
 }
-html[data-theme="dark"] .theme-toggle .uil-sun{
+html[data-theme="light"] .theme-toggle .uil-sun{
     display: none;
 }
-html[data-theme="dark"] .theme-toggle .uil-moon{
+html[data-theme="light"] .theme-toggle .uil-moon{
     display: block;
 }
