@@ -4,6 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio de Jordan NONO (root) — Chef de Projet IT, Data Analyst, Data Engineer et Développeur Fullstack. Découvrez mes projets web, mobile et data.">
+    <meta name="author" content="Jordan NONO">
+    <meta name="keywords" content="Jordan NONO, Chef de Projet IT, Data Analyst, Data Engineer, Développeur Fullstack, Laravel, Spring Boot, Python, Power BI, Portfolio">
+    <link rel="canonical" href="https://portfoliojordannono.netlify.app/">
+
+    <!-- --------- OPEN GRAPH / RESEAUX SOCIAUX ---------- -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfoliojordannono.netlify.app/">
+    <meta property="og:title" content="Jordan NONO — Chef de Projet IT · Data Analyst · Data Engineer · Fullstack">
+    <meta property="og:description" content="Portfolio de Jordan NONO (root) — Chef de Projet IT, Data Analyst, Data Engineer et Développeur Fullstack. Découvrez mes projets web, mobile et data.">
+    <meta property="og:image" content="https://portfoliojordannono.netlify.app/assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="fr_FR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://portfoliojordannono.netlify.app/">
+    <meta name="twitter:title" content="Jordan NONO — Chef de Projet IT · Data Analyst · Data Engineer · Fullstack">
+    <meta name="twitter:description" content="Portfolio de Jordan NONO (root) — Chef de Projet IT, Data Analyst, Data Engineer et Développeur Fullstack. Découvrez mes projets web, mobile et data.">
+    <meta name="twitter:image" content="https://portfoliojordannono.netlify.app/assets/images/og-image.png">
+
+    <!-- --------- DONNEES STRUCTUREES (SEO) ---------- -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jordan NONO",
+        "alternateName": "root",
+        "url": "https://portfoliojordannono.netlify.app/",
+        "email": "mailto:jordannono2245@gmail.com",
+        "jobTitle": ["Chef de Projet IT", "Data Analyst", "Data Engineer", "Développeur Fullstack"],
+        "sameAs": [
+            "https://www.linkedin.com/in/jordannono/",
+            "https://github.com/jordanNONO",
+            "https://gitlab.com/J_NONO"
+        ]
+    }
+    </script>
 
     <!-- --------- THEME (dark by default — avoid flash of wrong theme) ---------- -->
     <script>
@@ -32,6 +69,7 @@
     <title>Portfolio | Jordan NONO</title>
 </head>
 <body>
+   <a href="#main-content" class="skip-link">Aller au contenu principal</a>
    <div class="container">
     <!-- --------------- HEADER --------------- -->
       <nav id="header">
@@ -63,6 +101,11 @@
                 <i class="uil uil-moon"></i>
                 <i class="uil uil-sun"></i>
             </button>
+            <div class="nav-button">
+                <button class="btn" onclick="window.open('https://cvdesignr.com/p/63d877678a9e9', '_blank')">
+                    CV <i class="uil uil-file-alt"></i>
+                </button>
+            </div>
             <div class="nav-menu-btn">
                 <i class="uil uil-bars" onclick="myMenuFunction()"></i>
             </div>
@@ -71,7 +114,7 @@
 
 
     <!-- -------------- MAIN ---------------- -->
-    <main class="wrapper">
+    <main class="wrapper" id="main-content">
        <!-- -------------- FEATURED BOX ---------------- -->
        <section class="featured-box" id="home">
 
@@ -88,12 +131,15 @@
                 <p class="term-line" style="color:var(--text-color); font-weight:600;">Jordan NONO <span style="color:var(--text-muted)">(alias : root)</span></p>
 
                 <p class="term-line" style="margin-top:16px;"><span class="prompt">$</span> echo $ROLE</p>
-                <p class="hero-role">Je suis <span class="typedText"></span></p>
+                <h1 class="hero-role">Je suis <span class="typedText"></span></h1>
 
                 <p class="term-comment">Chef de Projet IT, Data Analyst / Data Engineer et Développeur Fullstack, passionné par le pilotage de projets techniques, l'extraction d'insights à partir de la donnée et la création de sites web esthétiques et intuitifs. Je conçois des dashboards interactifs, automatise des pipelines de données et livre des analyses actionnables pour la prise de décision.</p>
 
                 <div class="term-actions">
                     <button class="btn blue-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Me contacter</button>
+                    <button class="btn" onclick="window.open('https://cvdesignr.com/p/63d877678a9e9', '_blank')">
+                        Télécharger CV <i class="uil uil-file-alt"></i>
+                    </button>
                 </div>
 
                 <div class="social_icons">
@@ -152,7 +198,7 @@
        <section class="section" id="about">
           <div class="top-header">
             <p class="section-tag"><span class="prompt">$</span> cat about.md</p>
-            <h1>À propos de moi</h1>
+            <h2>À propos de moi</h2>
           </div>
           <div class="row">
             <div class="col">
@@ -233,7 +279,7 @@
        <section class="section" id="services">
           <div class="top-header">
               <p class="section-tag"><span class="prompt">$</span> cat services.json</p>
-              <h1>Ce que je fais</h1>
+              <h2>Ce que je fais</h2>
               <span>Les domaines dans lesquels j'interviens au quotidien</span>
           </div>
           <div class="services-grid">
@@ -277,7 +323,7 @@
        <section class="section" id="projects">
           <div class="top-header">
               <p class="section-tag"><span class="prompt">$</span> SELECT * FROM projects;</p>
-              <h1>Projets</h1>
+              <h2>Projets</h2>
               <span>Une sélection de projets web, mobile et data — le reste sur <a href="https://github.com/jordanNONO" target="_blank" rel="noopener" class="btn" style="padding:4px 12px;vertical-align:middle;">GitHub <i class="uil uil-github-alt"></i></a></span>
           </div>
 
@@ -499,7 +545,7 @@
      <section class="section" id="contact">
         <div class="top-header">
             <p class="section-tag"><span class="prompt">$</span> cat contact.sh</p>
-            <h1>Contactez-moi</h1>
+            <h2>Contactez-moi</h2>
             <span>Vous avez un projet en tête ? Contactez-moi ici</span>
         </div>
         <div class="row">
@@ -512,14 +558,14 @@
                         <span class="terminal-title">contact.sh</span>
                     </div>
                     <div class="terminal-body">
-                        <h2><i class="uil uil-corner-right-down"></i> Me trouver</h2>
+                        <h3><i class="uil uil-corner-right-down"></i> Me trouver</h3>
                         <p class="contact-line"><i class="uil uil-envelope"></i> <span class="token-var">EMAIL</span>="<a href="mailto:jordannono2245@gmail.com">jordannono2245@gmail.com</a>"</p>
                         <p class="contact-line"><i class="uil uil-phone"></i> <span class="token-keyword">TEL</span>="<a href="tel:+33745681219">07 45 68 12 19</a>"</p>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <form id="contact-form" class="form-control terminal-window" validate method="post" accept="#">
+                <form id="contact-form" class="form-control terminal-window" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" validate>
                     <div class="terminal-titlebar">
                         <span class="terminal-dot red"></span>
                         <span class="terminal-dot yellow"></span>
@@ -527,23 +573,28 @@
                         <span class="terminal-title">message.sh</span>
                     </div>
                     <div class="terminal-body">
+                        <input type="hidden" name="form-name" value="contact">
+                        <p class="hp-field" aria-hidden="true">
+                            <label>Ne pas remplir si humain : <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                        </p>
                         <div class="form-inputs">
                             <div class="form-field">
-                                <label class="form-label">nom =</label>
-                                <input type="text" name="name" class="input-field" placeholder="Votre nom" required>
+                                <label class="form-label" for="contact-name">nom =</label>
+                                <input id="contact-name" type="text" name="name" class="input-field" placeholder="Votre nom" required>
                             </div>
                             <div class="form-field">
-                                <label class="form-label">email =</label>
-                                <input type="email" name="email" class="input-field" placeholder="vous@exemple.com" required>
+                                <label class="form-label" for="contact-email">email =</label>
+                                <input id="contact-email" type="email" name="email" class="input-field" placeholder="vous@exemple.com" required>
                             </div>
                         </div>
                         <div class="form-field full">
-                            <label class="form-label">message =</label>
-                            <textarea name="message" placeholder="Votre message..." required></textarea>
+                            <label class="form-label" for="contact-message">message =</label>
+                            <textarea id="contact-message" name="message" placeholder="Votre message..." required></textarea>
                         </div>
                         <div class="form-button">
                             <button type="submit" class="btn">Envoyer <i class="uil uil-message"></i></button>
                         </div>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                     </div>
                 </form>
             </div>

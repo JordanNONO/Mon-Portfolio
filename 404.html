@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="description" content="Page introuvable — Portfolio de Jordan NONO.">
+
+    <script>
+        (function () {
+            var saved = localStorage.getItem('theme');
+            var theme = saved === 'light' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+    <title>404 | Jordan NONO</title>
+
+    <style>
+        .error-page{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .error-page .terminal-window{
+            width: 100%;
+            max-width: 620px;
+        }
+        .error-page .btn{
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="terminal-window">
+            <div class="terminal-titlebar">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">root@jordan-nono — zsh</span>
+            </div>
+            <div class="terminal-body">
+                <p class="term-line"><span class="prompt">$</span> cd <span id="path"></span></p>
+                <p class="term-line" style="color:var(--accent-red);">bash: cd: <span id="path2"></span>: No such file or directory</p>
+                <p class="term-comment">La page que vous cherchez n'existe pas ou a été déplacée. Retournez à l'accueil pour continuer la visite.</p>
+                <a class="btn blue-btn" href="/">./retour-accueil.sh</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var p = location.pathname || '/inconnu';
+        document.getElementById('path').textContent = p;
+        document.getElementById('path2').textContent = p;
+    </script>
+</body>
+</html>

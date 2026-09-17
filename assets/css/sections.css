@@ -25,7 +25,7 @@
     color: var(--text-muted);
     margin-bottom: 10px;
 }
-.top-header h1{
+.top-header h2{
     font-size: 32px;
     font-weight: 700;
     color: var(--text-color);
@@ -368,7 +368,7 @@ h3{
 .contact-line a:hover{
     text-decoration: underline;
 }
-.contact-info h2{
+.contact-info h3{
     font-family: var(--font-mono);
     font-size: 15px;
     color: var(--text-color);
@@ -456,4 +456,27 @@ textarea{
 .form-button i{
     font-size: 16px;
     transform: rotate(-45deg);
+}
+
+/* ----- HONEYPOT (anti-spam, invisible pour les humains) ----- */
+.hp-field{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* ----- FORM STATUS MESSAGE ----- */
+.form-status{
+    font-family: var(--font-mono);
+    font-size: 13px;
+    min-height: 18px;
+}
+.form-status.success{
+    color: var(--first-color);
+}
+.form-status.error{
+    color: var(--accent-red);
 }

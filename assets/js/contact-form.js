@@ -1,30 +1,78 @@
-/* ----- VALIDATION DU FORMULAIRE ET ENVOI VIA MAILTO ----- */
+/* ----- VALIDATION ET ENVOI DU FORMULAIRE DE CONTACT (Netlify Forms) ----- */
+function encodeFormData(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 const formsToValidate = document.querySelectorAll('form[validate]');
 
 formsToValidate.forEach((form) => {
+  const statusEl = form.querySelector('.form-status');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+
     let valid = true;
     const data = {};
-    const inputs = [...form.querySelectorAll('input'), ...form.querySelectorAll("select"), ...form.querySelectorAll("textarea")];
+    const requiredFields = form.querySelectorAll('[required]');
 
-    inputs.forEach(input => {
-      if (input.value.trim() === "") {
-        input.style.borderColor = "#e5484d";
+    requiredFields.forEach((field) => {
+      if (field.value.trim() === "") {
+        field.style.borderColor = "#e5484d";
         valid = false;
       } else {
-        input.style.borderColor = "";
-        data[input.name ?? input.id] = input.value.trim();
+        field.style.borderColor = "";
       }
+      data[field.name] = field.value.trim();
     });
 
     if (!valid) {
-      alert("Veuillez remplir tous les champs.");
+      if (statusEl) {
+        statusEl.textContent = "Merci de remplir tous les champs.";
+        statusEl.className = "form-status error";
+      }
       return;
     }
 
-    window.location.href = `mailto:jordannono2245@gmail.com?subject=${encodeURIComponent(data.name)}&body=${encodeURIComponent(data.message + '\n\nEmail: ' + data.email)}`;
-    form.reset();
-    alert("Message prêt à être envoyé via votre client mail.");
+    // Honeypot anti-spam : si rempli, on abandonne silencieusement
+    const honeypot = form.querySelector('[name="bot-field"]');
+    if (honeypot && honeypot.value !== "") {
+      return;
+    }
+
+    data['form-name'] = form.getAttribute('name');
+
+    if (submitBtn) submitBtn.disabled = true;
+    if (statusEl) {
+      statusEl.textContent = "Envoi en cours...";
+      statusEl.className = "form-status";
+    }
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encodeFormData(data),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+        if (statusEl) {
+          statusEl.textContent = "Message envoyé, merci ! Je reviens vers vous rapidement.";
+          statusEl.className = "form-status success";
+        }
+        form.reset();
+      })
+      .catch(() => {
+        if (statusEl) {
+          statusEl.textContent = "Échec de l'envoi. Écrivez-moi directement à jordannono2245@gmail.com.";
+          statusEl.className = "form-status error";
+        }
+      })
+      .finally(() => {
+        if (submitBtn) submitBtn.disabled = false;
+      });
   });
 });
