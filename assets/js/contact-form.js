@@ -23,7 +23,7 @@ formsToValidate.forEach((form) => {
       return;
     }
 
-    window.location.href = `mailto:nononoj@3il.fr?subject=${encodeURIComponent(data.name)}&body=${encodeURIComponent(data.message + '\n\nEmail: ' + data.email)}`;
+    window.location.href = `mailto:jordannono2245@gmail.com?subject=${encodeURIComponent(data.name)}&body=${encodeURIComponent(data.message + '\n\nEmail: ' + data.email)}`;
     form.reset();
     alert("Message prêt à être envoyé via votre client mail.");
   });
