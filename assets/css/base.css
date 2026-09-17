@@ -1,0 +1,85 @@
+/* ----- POPPINS FONT Link ----- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ----- BASE ----- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--body-color);
+    transition: background var(--transition-med);
+}
+
+::selection{
+    background: var(--first-color);
+    color: var(--color-white);
+}
+
+:focus-visible{
+    outline: 2px solid var(--first-color);
+    outline-offset: 3px;
+}
+
+/* ----- SCROLLBAR ----- */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: var(--surface-soft);
+}
+::-webkit-scrollbar-thumb{
+    background: var(--first-color);
+    border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: var(--first-color-hover);
+}
+
+/* ---##-- REUSABLE CSS --##--- */
+
+/* ----- GLOBAL BUTTON DESIGN ----- */
+.btn{
+    display: inline-block;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 12px 22px;
+    background: var(--surface-soft);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.btn>i{
+    margin-left: 10px;
+}
+.btn:hover{
+    background: var(--gradient);
+    color: var(--color-white);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -8px var(--shadow-color);
+}
+
+/* ----- GLOBAL ICONS DESIGN ----- */
+i{
+    font-size: 16px;
+}
+
+/* ------- LAYOUT SHELL -------- */
+.container{
+    width: 100%;
+    position: relative;
+}
+.wrapper{
+    padding-inline: 10vw;
+}

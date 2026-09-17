@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Jordan NONO — Développeur backend/frontend et Data Analyst. Découvrez mes projets web, mobile et data.">
+
+    <!-- --------- THEME (avoid flash of wrong theme) ---------- -->
+    <script>
+        (function () {
+            var saved = localStorage.getItem('theme');
+            var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 
     <!-- --------- UNICONS ---------- -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
     <!-- --------- CSS ---------- -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
+    <link rel="stylesheet" href="assets/css/sections.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 
     <!-- --------- FAVICON ---------- -->
     <link rel="shortcut icon" href="assets/images/favicon.jpg" type="image/x-icon">
@@ -20,7 +36,7 @@
     <!-- --------------- HEADER --------------- -->
       <nav id="header">
         <div class="nav-logo">
-            <p class="nav-name">Jordan </p>
+            <p class="nav-name">Jordan</p>
             <span>.</span>
         </div>
         <div class="nav-menu" id="myNavMenu">
@@ -34,6 +50,10 @@
                     <div class="circle"></div>
                 </li>
                 <li class="nav_list">
+                    <a href="#services" class="nav-link">Services</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
                     <a href="#projects" class="nav-link">Projects</a>
                     <div class="circle"></div>
                 </li>
@@ -43,13 +63,19 @@
                 </li>
             </ul>
         </div>
-        <div class="nav-button">
-            <button class="btn" onclick="window.open('https://cvdesignr.com/p/63d877678a9e9', '_blank')">
-                Télécharger CV <i class="uil uil-file-alt"></i>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème">
+                <i class="uil uil-moon"></i>
+                <i class="uil uil-sun"></i>
             </button>
-        </div>
-        <div class="nav-menu-btn">
-            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+            <div class="nav-button">
+                <button class="btn" onclick="window.open('https://cvdesignr.com/p/63d877678a9e9', '_blank')">
+                    Télécharger CV <i class="uil uil-file-alt"></i>
+                </button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+            </div>
         </div>
       </nav>
 
@@ -66,33 +92,33 @@
                 <p>I'm <span class="typedText"></span></p>
             </div>
             <div class="featured-text-info">
-                <p>Experienced backend, frontend developer and data analyst, passionate about creating aesthetically impressive, user-friendly websites and extracting insights from data. I design interactive dashboards, automate data pipelines, and deliver actionable analytics for business decisions.</p>
+                <p>Développeur backend/frontend et Data Analyst, passionné par la création de sites web esthétiques et intuitifs et par l'extraction d'insights à partir de la donnée. Je conçois des dashboards interactifs, automatise des pipelines de données et livre des analyses actionnables pour la prise de décision.</p>
             </div>
             <div class="featured-text-btn">
-                <button class="btn blue-btn">Hire me</button>
+                <button class="btn blue-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire me</button>
                 <button class="btn" onclick="window.open('https://cvdesignr.com/p/63d877678a9e9', '_blank')">
                     Télécharger CV <i class="uil uil-file-alt"></i>
                 </button>
 
             </div>
             <div class="social_icons">
-                <div class="icon" href =""><a href="https://www.instagram.com/nononnjcjordan" target="_blank" class="icon">
+                <a href="https://www.instagram.com/nononnjcjordan" target="_blank" rel="noopener" class="icon" aria-label="Instagram">
                     <i class="uil uil-instagram"></i>
-                </a></div>
-                <div class="icon"><a href="https://www.linkedin.com/in/jordan-nono-67b125262" target="_blank" class="icon">
-                    <i class="uil uil-linkedin"></i>
-                </a></div>
-                <div class="icon"><a href="https://dribbble.com/NONOJordan" target="_blank" class="icon">
+                </a>
+                <a href="https://www.linkedin.com/in/jordan-nono-67b125262" target="_blank" rel="noopener" class="icon" aria-label="LinkedIn">
+                    <i class="uil uil-linkedin-alt"></i>
+                </a>
+                <a href="https://dribbble.com/NONOJordan" target="_blank" rel="noopener" class="icon" aria-label="Dribbble">
                     <i class="uil uil-dribbble"></i>
-                </a></div>
-                <div class="icon"><a href="https://github.com/jordanNONO" target="_blank" class="icon">
+                </a>
+                <a href="https://github.com/jordanNONO" target="_blank" rel="noopener" class="icon" aria-label="GitHub">
                     <i class="uil uil-github-alt"></i>
-                </a></div>
+                </a>
             </div>
           </div>
           <div class="featured-image">
             <div class="image">
-                <img src="assets/images/avatar.jpg" alt="avatar">
+                <img src="assets/images/avatar.jpg" alt="Portrait de Jordan NONO">
             </div>
           </div>
           <div class="scroll-icon-box">
@@ -112,7 +138,7 @@
             <div class="col">
                 <div class="about-info">
                     <h3>My introduction</h3>
-                    <p>I am an enthusiastic Data Analyst and Web Developer. My expertise covers Python, Pandas, Power BI, SQL, and data visualization, as well as backend and frontend development. I create interactive dashboards, automate data pipelines, and deliver actionable analytics for business decisions, alongside building modern web applications.</p>
+                    <p>Je suis Data Analyst et développeur web passionné. Mon expertise couvre Python, Pandas, Power BI, SQL et la data visualisation, ainsi que le développement backend et frontend. Je crée des dashboards interactifs, automatise des pipelines de données et livre des analyses actionnables pour la prise de décision, tout en construisant des applications web modernes.</p>
                     <div class="about-btn">
                         <button class="btn" onclick="window.open('https://cvdesignr.com/p/63d877678a9e9', '_blank')">
                             Télécharger CV <i class="uil uil-file-alt"></i>
@@ -169,29 +195,168 @@
           </div>
        </section>
 
+       <!-- -------------- SERVICES BOX ---------------- -->
+       <section class="section" id="services">
+          <div class="top-header">
+              <h1>What I Do</h1>
+              <span>Les domaines dans lesquels j'interviens au quotidien</span>
+          </div>
+          <div class="services-grid">
+            <div class="service-card">
+                <div class="service-card-icon"><i class="uil uil-brackets-curly"></i></div>
+                <h3>Développement Web</h3>
+                <p>Sites et applications web sur-mesure, du backend (Laravel, Node.js, C#) au frontend (React, Angular, Tailwind), avec une attention particulière à l'UX et aux performances.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-card-icon"><i class="uil uil-chart-line"></i></div>
+                <h3>Data Analysis & BI</h3>
+                <p>Nettoyage et analyse de données avec Python/Pandas et SQL, création de dashboards Power BI clairs et exploitables pour appuyer la prise de décision.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-card-icon"><i class="uil uil-process"></i></div>
+                <h3>Automatisation & Pipelines</h3>
+                <p>Automatisation de flux de données et de tâches récurrentes, mise en place de pipelines fiables pour gagner du temps et fiabiliser les traitements.</p>
+            </div>
+          </div>
+       </section>
+
        <!-- -------------- PROJECT BOX ---------------- -->
 
        <section class="section" id="projects">
           <div class="top-header">
               <h1>Projects</h1>
-              <span>Discover all my web and data projects on <a href="https://github.com/jordanNONO" target="_blank" rel="noopener" class="btn" style="padding:4px 12px;vertical-align:middle;">GitHub <i class="uil uil-github-alt"></i></a></span>
+              <span>Une sélection de projets web, mobile et data — le reste sur <a href="https://github.com/jordanNONO" target="_blank" rel="noopener" class="btn" style="padding:4px 12px;vertical-align:middle;">GitHub <i class="uil uil-github-alt"></i></a></span>
           </div>
-          <div class="project-container">
-            <div class="project-box">
+
+          <div class="project-stats">
+            <div class="project-stat">
                 <i class="uil uil-briefcase-alt"></i>
-                <h3>Completed</h3>
-                <label>50+ Finished Projects (Web & Data)</label>
+                <div>
+                    <h3>50+</h3>
+                    <label>Projets réalisés</label>
+                </div>
             </div>
-            <div class="project-box">
+            <div class="project-stat">
                 <i class="uil uil-users-alt"></i>
-                <h3>Clients</h3>
-                <label>10+ Happy Clients</label>
+                <div>
+                    <h3>10+</h3>
+                    <label>Clients satisfaits</label>
+                </div>
             </div>
-            <div class="project-box">
+            <div class="project-stat">
                 <i class="uil uil-award"></i>
-                <h3>Experience</h3>
-                <label>3+ Years in the field</label>
+                <div>
+                    <h3>3+</h3>
+                    <label>Ans d'expérience</label>
+                </div>
             </div>
+          </div>
+
+          <div class="project-filter">
+              <button class="project-filter-btn active" data-filter="all" type="button">Tous</button>
+              <button class="project-filter-btn" data-filter="web" type="button">Web</button>
+              <button class="project-filter-btn" data-filter="mobile" type="button">Mobile</button>
+              <button class="project-filter-btn" data-filter="data" type="button">Data</button>
+          </div>
+
+          <div class="project-grid">
+
+            <article class="project-card" data-category="web">
+                <div class="project-card-top">
+                    <div class="project-card-icon"><i class="uil uil-graduation-cap"></i></div>
+                    <div class="project-card-links">
+                        <a href="https://github.com/JordanNONO/gestion_notes_etudiants_laravel" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
+                    </div>
+                </div>
+                <h3>Gestion des Notes Étudiants</h3>
+                <p>Plateforme Laravel pour administrateurs, enseignants et étudiants : création de comptes, saisie et consultation des notes, filtrage, recherche et relevés pour l'analyse des performances.</p>
+                <div class="project-card-tags">
+                    <span>Laravel</span>
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="mobile">
+                <div class="project-card-top">
+                    <div class="project-card-icon"><i class="uil uil-building"></i></div>
+                    <div class="project-card-links">
+                        <a href="https://github.com/JordanNONO/EASYROOM" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
+                    </div>
+                </div>
+                <h3>EasyRoom</h3>
+                <p>Application mobile conçue pour aider les étudiants à trouver un logement adapté à leur localité, avec une interface simple et intuitive pour faciliter la recherche.</p>
+                <div class="project-card-tags">
+                    <span>Flutter</span>
+                    <span>Dart</span>
+                    <span>Mobile</span>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="mobile">
+                <div class="project-card-top">
+                    <div class="project-card-icon"><i class="uil uil-car"></i></div>
+                    <div class="project-card-links">
+                        <a href="https://github.com/JordanNONO/Covoiturage-universitaire" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
+                    </div>
+                </div>
+                <h3>Covoiturage Universitaire</h3>
+                <p>Plateforme facilitant les déplacements entre enseignants et étudiants : création de trajets, gestion des utilisateurs et véhicules, paiements sécurisés, pour une mobilité plus durable.</p>
+                <div class="project-card-tags">
+                    <span>Flutter</span>
+                    <span>Dart</span>
+                    <span>Firebase</span>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="data">
+                <div class="project-card-top">
+                    <div class="project-card-icon"><i class="uil uil-wallet"></i></div>
+                    <div class="project-card-links">
+                        <a href="https://github.com/JordanNONO/Mon_Suivi_Financier" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
+                    </div>
+                </div>
+                <h3>Mon Suivi Financier</h3>
+                <p>Dashboard offrant une vue claire de la situation financière d'un individu : suivi des revenus et dépenses, visualisation des économies, objectifs, tendances et alertes budgétaires.</p>
+                <div class="project-card-tags">
+                    <span>Data Viz</span>
+                    <span>Dashboard</span>
+                    <span>Finance</span>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="web">
+                <div class="project-card-top">
+                    <div class="project-card-icon"><i class="uil uil-utensils-alt"></i></div>
+                    <div class="project-card-links">
+                        <a href="https://github.com/JordanNONO/Fastfood" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
+                    </div>
+                </div>
+                <h3>Fastfood</h3>
+                <p>Projet tutoré de programmation orientée objet sur ASP.NET : gestion d'un service de restauration rapide avec une architecture claire et modulaire.</p>
+                <div class="project-card-tags">
+                    <span>C#</span>
+                    <span>ASP.NET</span>
+                    <span>POO</span>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="web">
+                <div class="project-card-top">
+                    <div class="project-card-icon"><i class="uil uil-shopping-cart-alt"></i></div>
+                    <div class="project-card-links">
+                        <a href="https://github.com/JordanNONO/complete-ecommerce-asp.net-mvc-application" target="_blank" rel="noopener" aria-label="Voir le code sur GitHub"><i class="uil uil-github-alt"></i></a>
+                    </div>
+                </div>
+                <h3>E-commerce ASP.NET MVC</h3>
+                <p>Application e-commerce complète construite avec ASP.NET MVC : catalogue produits, panier, gestion des commandes et back-office administrateur.</p>
+                <div class="project-card-tags">
+                    <span>ASP.NET MVC</span>
+                    <span>C#</span>
+                    <span>SQL Server</span>
+                </div>
+            </article>
+
           </div>
        </section>
 
@@ -226,11 +391,6 @@
             </div>
         </div>
     </section>
-    
-    <script>
-        
-    </script>
-
 
     </main>
 
@@ -270,7 +430,11 @@
        <!-- ----- SCROLL REVEAL JS Link----- -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
-    <!-- ----- MAIN JS ----- -->
-    <script src="assets/js/main.js"></script>
+    <!-- ----- APP JS (modules) ----- -->
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/projects.js"></script>
+    <script src="assets/js/contact-form.js"></script>
 </body>
 </html>
