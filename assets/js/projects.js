@@ -12,6 +12,12 @@ filterButtons.forEach(function (button) {
     projectCards.forEach(function (card) {
       const match = filter === 'all' || card.getAttribute('data-category') === filter;
       card.style.display = match ? '' : 'none';
+      // Force la carte visible si elle n'a jamais été révélée par ScrollReveal
+      // (ex: navigation directe vers #projects puis filtrage sans avoir scrollé).
+      if (match) {
+        card.style.opacity = '1';
+        card.style.transform = 'none';
+      }
     });
   });
 });

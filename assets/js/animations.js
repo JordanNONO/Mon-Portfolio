@@ -28,7 +28,9 @@ sr.reveal('.service-card', { interval: 150 })
 
 /* -- PROJECT BOX -- */
 sr.reveal('.project-stat', { interval: 150 })
-sr.reveal('.project-card', { interval: 150 })
+/* .project-card est exclu : le filtrage dynamique (projects.js) affiche/masque
+   les cartes via display, ce qui entre en conflit avec le reset de ScrollReveal
+   et peut laisser des cartes visibles mais à opacité 0. */
 
 /* -- HEADINGS -- */
 sr.reveal('.top-header', {})
