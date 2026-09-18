@@ -170,6 +170,15 @@ h3{
     max-height: 100%;
     object-fit: contain;
 }
+.git-log-logo-dual{
+    width: auto;
+    gap: 6px;
+    padding: 5px 7px;
+}
+.git-log-logo-dual img{
+    width: 24px;
+    height: 24px;
+}
 .git-log-title{
     font-family: var(--font-body);
     font-size: 15px;
