@@ -20,6 +20,9 @@ const sr = ScrollReveal({
 sr.reveal('.hero-terminal', {})
 sr.reveal('.neofetch-card', { delay: 200 })
 
+/* -- FORMATION -- */
+sr.reveal('.git-log-window', {})
+
 /* -- SERVICES -- */
 sr.reveal('.service-card', { interval: 150 })
 

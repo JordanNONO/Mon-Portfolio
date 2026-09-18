@@ -11,6 +11,7 @@
 }
 .col{
     display: flex;
+    flex-direction: column;
     width: 50%;
 }
 
@@ -127,6 +128,79 @@ h3{
     color: var(--surface-alt);
     transform: translateY(-2px);
     border-color: transparent;
+}
+
+/* ----- FORMATION (GIT LOG TIMELINE) ----- */
+.git-log-window{
+    max-width: 820px;
+    margin-inline: auto;
+}
+.git-log-entry{
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding-block: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+.git-log-entry:last-child{
+    border-bottom: none;
+}
+.git-hash{
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-amber);
+    padding-top: 2px;
+}
+.git-log-logo{
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 6px;
+}
+.git-log-logo img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.git-log-title{
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+.git-log-meta{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+.git-log-badge{
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+.badge-mention{
+    background: color-mix(in srgb, var(--first-color) 18%, transparent);
+    color: var(--first-color);
+}
+.badge-progress{
+    background: color-mix(in srgb, var(--third-color) 18%, transparent);
+    color: var(--third-color);
 }
 
 /* ----- SERVICES ("WHAT I DO") ----- */
